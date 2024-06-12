@@ -1,0 +1,14 @@
+
+/etc/init.d/networking start
+sysctl -w net.ipv6.conf.all.forwarding=1
+
+
+ifconfig eth0 68.80.1.254/24 up
+ifconfig eth1 68.80.0.254/13 up
+route add -net 64.233.0.0/28 gw 68.80.0.253
+ip a a 2001:21:1:2101::1 dev eth0
+ip r a 2001:21:1:21F1::/64 dev 2001:21:1:21E1::2
+ip a a 2001:23:1:21E1::1 dev eth1
+#service isc-dhcp-server start
+
+/etc/init.d/radvd start

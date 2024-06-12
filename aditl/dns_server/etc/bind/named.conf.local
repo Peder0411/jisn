@@ -1,0 +1,9 @@
+zone "mygoogle.com" {
+    type master;
+    file "/etc/bind/db.mygoogle.com"; # zone file path
+};
+
+zone "myfontys.com" {
+    type master;
+    file "/etc/bind/db.myfontys.com"; # zone file path
+};
